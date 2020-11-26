@@ -14,15 +14,15 @@ export default class AnimationControl extends React.Component {
     return (
       <div className="row mt-2 mb-4">
         <div className="col-12 text-center">
-          <button className="btn" onClick={() => {this.props.animator.play()}}><i className="fas fa-save"></i></button>
+          <button className="btn" onClick={() => {this.props.keyframesManger.saveAnimation()}}><i className="fas fa-save"></i></button>
         </div>
         <div className="col-6">
           <button className="btn" onClick={() => {this.props.animator.play()}}><i className="fas fa-play"></i></button>
-          <button className="btn"><i className="fas fa-pause"></i></button>
-          <button className="btn"><i className="fas fa-stop"></i></button>
+          <button className="btn" onClick={() => {this.props.animator.pause()}}><i className="fas fa-pause"></i></button>
+          <button className="btn" onClick={() => {this.props.animator.stop()}}><i className="fas fa-stop"></i></button>
         </div>
         <div className="col-6 text-right">
-          <button className="btn" onClick={() => {this.props.animator.play()}}><i className="fas fa-minus"></i></button>
+          <button className="btn" onClick={() => {alert('not implemented yet!')}}><i className="fas fa-minus"></i></button>
           <button className="btn" onClick={() => {this.props.keyframesManger.setKeyframe()}}><i className="fas fa-plus"></i></button>
         </div>
       </div>

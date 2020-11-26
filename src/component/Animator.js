@@ -44,6 +44,7 @@ export default class Animator {
         const timelineWIdth = $('#timeline').innerWidth()
         const secondFrameWidth = timelineWIdth / 15
         const keyframes = KeyframesManger.getKeyframes();
+        console.log(keyframes)
 
         let totalDuration = 0
         for (let i = 0; i < keyframes.length; i++) {
@@ -67,5 +68,14 @@ export default class Animator {
         }, `-=${totalDuration}`)
 
         this.timeLine.play()
+    }
+
+    pause() {
+        this.timeLine.pause()
+    }
+
+    stop() {
+        this.timeLine.seek(0)
+        this.timeLine.pause()
     }
 }
