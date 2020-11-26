@@ -2,6 +2,7 @@ import {
     gsap,
     Draggable
 } from "gsap/all";
+import KeyframesManger from './KeyframesManger';
 import $ from 'jquery'
 
 export default class Animator {
@@ -39,31 +40,10 @@ export default class Animator {
         // }
     }
 
-    getKeyframes() {
-        const keyframes = [{
-                duration: 1,
-                x: 200,
-                y: 150
-            },
-            {
-                duration: 2,
-                x: 80,
-                y: 100
-            },
-            {
-                duration: 3,
-                x: 190,
-                y: 70
-            }
-        ]
-
-        return keyframes
-    }
-
     play() {
-        const timelineWIdth = $('#timeline').innerWidth() - 20
+        const timelineWIdth = $('#timeline').innerWidth()
         const secondFrameWidth = timelineWIdth / 15
-        const keyframes = this.getKeyframes();
+        const keyframes = KeyframesManger.getKeyframes();
 
         let totalDuration = 0
         for (let i = 0; i < keyframes.length; i++) {

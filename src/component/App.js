@@ -5,22 +5,26 @@ import AnimationControl from "./AnimationControl/AnimationControl";
 import Stage from "./Stage/Stage";
 import TimeLine from "./TimeLine/TimeLine";
 import Animator from './Animator';
+import KeyframesManger from './KeyframesManger';
 
 export default class App extends React.Component {
   state = {
-    animator: null
+    animator: null,
+    keyframesManger: null
   };
 
   componentDidMount() {
-    let an = new Animator()
-    this.setState({animator: an})
+    this.setState({
+      animator: new Animator(),
+      keyframesManger: new KeyframesManger()
+    })
   }
 
   render() {
     return (
       <div className='container-fluid'> 
         <Stage></Stage>
-        <AnimationControl animator={this.state.animator}></AnimationControl>
+        <AnimationControl animator={this.state.animator} keyframesManger={this.state.keyframesManger}></AnimationControl>
         <TimeLine></TimeLine>
       </div>
     );

@@ -8,8 +8,10 @@ export default class TimeLine extends React.Component {
     return (
       <div className="row">
         <div className="col-12 mb-2">
-          <div id='timeline'>
-            <div className='timeline-cursor'></div>
+          <div id="timeline-container">
+            <div id='timeline'>
+              <div className='timeline-cursor'></div>
+            </div>
           </div>
         </div>
         <div className="col-4">

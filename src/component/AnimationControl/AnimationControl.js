@@ -23,7 +23,7 @@ export default class AnimationControl extends React.Component {
         </div>
         <div className="col-6 text-right">
           <button className="btn" onClick={() => {this.props.animator.play()}}><i className="fas fa-minus"></i></button>
-          <button className="btn"><i className="fas fa-plus"></i></button>
+          <button className="btn" onClick={() => {this.props.keyframesManger.setKeyframe()}}><i className="fas fa-plus"></i></button>
         </div>
       </div>
       
